@@ -1,7 +1,7 @@
 # GoAdmin 官方主题
 
-- [adminlte](https://github.com/GoAdminGroup/themes/tree/master/adminlte)
-- [sword](https://github.com/GoAdminGroup/themes/tree/master/sword)
+- [adminlte](https://github.com/Lifelong-Study/themes/tree/master/adminlte)
+- [sword](https://github.com/Lifelong-Study/themes/tree/master/sword)
 
 ## 如何使用
 
@@ -14,24 +14,24 @@ package main
 
 import (
 	...
-	_ "github.com/GoAdminGroup/themes/adminlte"
+	_ "github.com/Lifelong-Study/themes/adminlte"
 	...
 )
 
 func main()  {
-	
+
 	...
-	
+
 	cfg := config.Config{
     		...
-    		
+
     		Theme: "adminlte",
-    		
+
     		...
     	}
-	
+
 	...
- 
+
 }
 
 ```
