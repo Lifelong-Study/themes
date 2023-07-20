@@ -385,7 +385,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                 {{if not .NoIcon}}
                     <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
                 {{end}}
-            {{end}}            
+            {{end}}
             <input {{if .Must}}required="1"{{end}} style="width: 170px" type="text"
                    name="{{.Field}}"
                    value="{{.Value}}"
@@ -406,7 +406,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                 {{if not .NoIcon}}
                     <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
                 {{end}}
-            {{end}} 
+            {{end}}
             <input type="text" id="{{.Field}}_start__goadmin" name="{{.Field}}_start__goadmin" value="{{.Value}}"
                    class="form-control {{.Field}}_start__goadmin" placeholder="{{.Placeholder}}">
             <span class="input-group-addon" style="border-left: 0; border-right: 0;">-</span>
@@ -464,7 +464,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         });
         $("input.{{.Field}}").on("change", function(e) {
             $(".{{.Field}}__change_flag").val("1")
-        });        
+        });
     </script>
 {{end}}`, "components/form/help_block": `{{define "help_block"}}
     {{if ne . ""}}
@@ -495,7 +495,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         <div class="input-group">
             {{if not .NoIcon}}
                 <span class="input-group-addon"><i class="fa fa-laptop fa-fw"></i></span>
-            {{end}}         
+            {{end}}
             <input {{if .Must}}required="1"{{end}} style="width: 130px" type="text" name="{{.Field}}"
                    value='{{.Value}}' class="form-control {{.Field}}"
                    placeholder="{{.Placeholder}}">
@@ -521,7 +521,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         });
         $("input.{{.Field}}").on("change", function(e) {
             $(".{{.Field}}__change_flag").val("1")
-        });        
+        });
     </script>
 {{end}}`, "components/form/number": `{{define "form_number"}}
     {{if .Editable}}
@@ -767,10 +767,10 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                     </div>
                     <div class="{{$.Field}}-down btn btn-warning btn-sm pull-right" style="margin-left: 5px;">
                         <i class="fa fa-arrow-down"></i>
-                    </div> 
+                    </div>
                     <div class="{{$.Field}}-remove btn btn-warning btn-sm pull-right">
                         <i class="fa fa-trash">&nbsp;</i>{{lang "remove"}}
-                    </div> 
+                    </div>
               </div>
           </td>
       </tr>
@@ -808,10 +808,10 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
             </div>
             <div class="{{$.Field}}-down btn btn-warning btn-sm pull-right" style="margin-left: 5px;">
                 <i class="fa fa-arrow-down"></i>
-            </div> 
+            </div>
             <div class="{{.Field}}-remove btn btn-warning btn-sm pull-right">
                 <i class="fa fa-trash">&nbsp;</i>{{lang "remove"}}
-            </div>         
+            </div>
         </div>
         </td>
   </tr>
@@ -828,7 +828,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
       .remove();
   });
 
-  $("tbody").on("click", ".{{.Field}}-down", function() {    
+  $("tbody").on("click", ".{{.Field}}-down", function() {
     let $tr = $(this).parents("tr");
     let len = $(this).parents("tbody").find("tr").length;
     if ($tr.index() !== len - 1) {
@@ -836,7 +836,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     }
   });
 
-  $("tbody").on("click", ".{{.Field}}-up", function() {    
+  $("tbody").on("click", ".{{.Field}}-up", function() {
     let $tr = $(this).parents("tr");
     if ($tr.index() !== 0){
         $tr.prev().before($tr);
@@ -909,7 +909,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                class="form-control {{.Field}}"
                placeholder="{{.Placeholder}}">
     </div>
-{{end}}`, "components/form": `{{define "form"}}    
+{{end}}`, "components/form": `{{define "form"}}
     {{.Header}}
     <form id={{.Id}} {{if .Ajax}}οnsubmit="return false;" {{end}}action="{{.Url}}" method="{{.Method}}" accept-charset="UTF-8" class="form-horizontal" {{if not .Ajax}}pjax-container{{end}}
           style="background-color: white;{{if ne (len .TabHeaders) 0}}padding: 0px;{{end}}">
@@ -944,7 +944,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     {{.Footer}}
     {{if .Ajax}}
         <script>
-            $("#{{.Id}}").submit(function(e){                
+            $("#{{.Id}}").submit(function(e){
                 var form = $(this);
                 $.ajax({
                     headers: {
@@ -986,9 +986,9 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     {{else if eq .FormType.String "textarea"}}
         {{ template "form_textarea" .  }}
     {{else if eq .FormType.String "slider"}}
-        {{ template "form_slider" .  }}                
+        {{ template "form_slider" .  }}
     {{else if eq .FormType.String "rate"}}
-        {{ template "form_rate" .  }}                
+        {{ template "form_rate" .  }}
     {{else if eq .FormType.String "iconpicker"}}
         {{ template "form_iconpicker" .  }}
     {{else if eq .FormType.String "richtext"}}
@@ -996,15 +996,15 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     {{else if eq .FormType.String "code"}}
         {{ template "form_code" .  }}
     {{else if eq .FormType.String "checkbox_single"}}
-        {{ template "form_checkbox_single" .  }}          
+        {{ template "form_checkbox_single" .  }}
     {{else if eq .FormType.String "checkbox"}}
-        {{ template "form_checkbox" .  }}        
+        {{ template "form_checkbox" .  }}
     {{else if eq .FormType.String "checkbox_stacked"}}
-        {{ template "form_checkbox_stacked" .  }}         
+        {{ template "form_checkbox_stacked" .  }}
     {{else if eq .FormType.String "table"}}
-        {{ template "form_table" .  }}        
+        {{ template "form_table" .  }}
     {{else if eq .FormType.String "array"}}
-        {{ template "form_array" .  }}        
+        {{ template "form_array" .  }}
     {{else if eq .FormType.String "datetime"}}
         {{ template "form_datetime" .  }}
     {{else if eq .FormType.String "datetime_range"}}
@@ -1043,7 +1043,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
             <div class="col-md-{{divide 12 (len $.ContentList)}}">
                 <div class="box-body">
                     <div class="fields-group">
-                        {{range $key, $data := $content}}                            
+                        {{range $key, $data := $content}}
                             {{if $data.Divider}}
                                 {{if $data.DividerTitle}}
                                     <div class='form-group divider'>
@@ -1065,8 +1065,8 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                         {{end}}
                                         <div class="col-sm-{{$data.RowWidth}}">
                                             {{template "form_components" $data}}
-                                            {{$data.Foot}} 
-                                        </div>                                                    
+                                            {{$data.Foot}}
+                                        </div>
                                 {{else if eq $data.RowFlag 3}}
                                     <div class="col-sm-{{$data.RowWidth}}" style="padding-left: 0px;">
                                         {{if ne $data.Head ""}}
@@ -1077,7 +1077,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                             {{template "form_components" $data}}
                                         </div>
                                         {{$data.Foot}}
-                                    </div>                                            
+                                    </div>
                                 {{else if eq $data.RowFlag 2}}
                                         <div class="col-sm-{{$data.RowWidth}}" style="padding-right:0px;padding-left: 0px;">
                                             {{if ne $data.Head ""}}
@@ -1086,7 +1086,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                             {{end}}
                                             <div class="{{if eq $data.InputWidth 0}}col-sm-{{$.InputWidth}}{{else}}col-sm-{{$data.InputWidth}}{{end}}" style="padding-left: 0px;padding-right: 0px;">
                                                 {{template "form_components" $data}}
-                                            </div>                                            
+                                            </div>
                                         </div>
                                         {{$data.Foot}}
                                     </div>
@@ -1135,8 +1135,8 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                 {{end}}
                                 <div class="col-sm-{{$data.RowWidth}}">
                                     {{template "form_components" $data}}
-                                    {{$data.Foot}} 
-                                </div>                                                    
+                                    {{$data.Foot}}
+                                </div>
                         {{else if eq $data.RowFlag 3}}
                             <div class="col-sm-{{$data.RowWidth}}" style="padding-left: 0px;">
                                 {{if ne $data.Head ""}}
@@ -1147,7 +1147,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                     {{template "form_components" $data}}
                                 </div>
                                 {{$data.Foot}}
-                            </div>                                            
+                            </div>
                         {{else if eq $data.RowFlag 2}}
                                 <div class="col-sm-{{$data.RowWidth}}" style="padding-right:0px;padding-left: 0px;">
                                     {{if ne $data.Head ""}}
@@ -1156,7 +1156,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                     {{end}}
                                     <div class="{{if eq $data.InputWidth 0}}col-sm-{{$.InputWidth}}{{else}}col-sm-{{$data.InputWidth}}{{end}}" style="padding-left: 0px;padding-right: 0px;">
                                         {{template "form_components" $data}}
-                                    </div>                                    
+                                    </div>
                                 </div>
                                 {{$data.Foot}}
                             </div>
@@ -1230,8 +1230,8 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                         {{end}}
                         <div class="col-sm-{{$data.RowWidth}}">
                             {{template "form_components" $data}}
-                            {{$data.Foot}} 
-                        </div>                                                    
+                            {{$data.Foot}}
+                        </div>
                 {{else if eq $data.RowFlag 3}}
                     <div class="col-sm-{{$data.RowWidth}}" style="padding-left: 0px;">
                         {{if ne $data.Head ""}}
@@ -1242,7 +1242,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                             {{template "form_components" $data}}
                         </div>
                         {{$data.Foot}}
-                    </div>                                            
+                    </div>
                 {{else if eq $data.RowFlag 2}}
                         <div class="col-sm-{{$data.RowWidth}}" style="padding-right:0px;padding-left: 0px;">
                             {{if ne $data.Head ""}}
@@ -1251,7 +1251,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                             {{end}}
                             <div class="{{if eq $data.InputWidth 0}}col-sm-{{$.InputWidth}}{{else}}col-sm-{{$data.InputWidth}}{{end}}" style="padding-left: 0px;padding-right: 0px;">
                                 {{template "form_components" $data}}
-                            </div>                            
+                            </div>
                         </div>
                         {{$data.Foot}}
                     </div>
@@ -1266,7 +1266,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                         </div>
                         {{$data.Foot}}
                     </div>
-                {{end}}              
+                {{end}}
             {{end}}
         {{end}}
 
@@ -2453,7 +2453,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                             <a target="_blank" href='{{$item.Url}}'>
                                         {{else}}
                                             <a href='{{$UrlPrefix}}{{$item.Url}}'>
-                                        {{end}}                            
+                                        {{end}}
                                             <i class="fa {{$item.Icon}}"></i> {{$item.Name}}
                                         </a>
                                     </li>
@@ -2474,7 +2474,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                                             <a target="_blank" href='{{$subItem.Url}}'>
                                                         {{else}}
                                                             <a href='{{$UrlPrefix}}{{$subItem.Url}}'>
-                                                        {{end}}                                             
+                                                        {{end}}
                                                             <i class="fa {{$subItem.Icon}}"></i> {{$subItem.Name}}
                                                         </a>
                                                     </li>
@@ -2487,7 +2487,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                         </li>
                     {{end}}
                 {{end}}
-            </ul>    
+            </ul>
         </div>
     {{end}}
 
@@ -2723,7 +2723,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         <div class="pull-right hidden-xs">
             <b>Theme</b> {{.System.Theme}}&nbsp;&nbsp;
         </div>
-        <strong>Powered by <a href="https://github.com/GoAdminGroup/go-admin">GoAdmin</a>.</strong>
+        <strong>Powered by <a href="https://github.com/Lifelong-Study/go-admin">GoAdmin</a>.</strong>
         {{.FooterInfo}}
     </footer>
 {{end}}`, "head": `{{define "head"}}
@@ -2868,7 +2868,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                     <a target="_blank" href='{{$item.Url}}'>
                                 {{else}}
                                     <a href='{{$UrlPrefix}}{{$item.Url}}'>
-                                {{end}}                            
+                                {{end}}
                                     <i class="fa {{$item.Icon}}"></i> {{$item.Name}}
                                 </a>
                             </li>
@@ -2889,7 +2889,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                                     <a target="_blank" href='{{$subItem.Url}}'>
                                                 {{else}}
                                                     <a href='{{$UrlPrefix}}{{$subItem.Url}}'>
-                                                {{end}}                                             
+                                                {{end}}
                                                     <i class="fa {{$subItem.Icon}}"></i> {{$subItem.Name}}
                                                 </a>
                                             </li>
